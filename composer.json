@@ -1,6 +1,6 @@
 {
     "name": "brunojk/origin-redis-translator",
-    "description": "Redis Translation adapter for Laravel",
+    "description": "Redis Translator adapter for Laravel/Lumen",
     "authors": [
         {
             "name": "Bruno Jorge Kosloski",
