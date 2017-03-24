@@ -3,15 +3,14 @@
 namespace brunojk\OriginRedisTranslator;
 
 use Illuminate\Container\Container;
-use Illuminate\Redis\Database;
 use Illuminate\Support\Collection;
 use Illuminate\Support\NamespacedItemResolver;
 use Illuminate\Support\Str;
 use Illuminate\Translation\Translator;
-use Symfony\Component\Translation\MessageSelector;
-use Symfony\Component\Translation\TranslatorInterface;
+use Illuminate\Translation\MessageSelector;
+use Illuminate\Contracts\Translation\Translator as TranslatorContract;
 
-class RedisTranslator extends NamespacedItemResolver implements TranslatorInterface
+class RedisTranslator extends NamespacedItemResolver implements TranslatorContract
 {
     /**
      * The redis connection name.
@@ -80,7 +79,7 @@ class RedisTranslator extends NamespacedItemResolver implements TranslatorInterf
     }
 
     /**
-     * @return Database
+     * @return \Illuminate\Redis\Connections\Connection
      */
     protected function redis() {
         if( function_exists('app') )
@@ -246,7 +245,7 @@ class RedisTranslator extends NamespacedItemResolver implements TranslatorInterf
     /**
      * Get the message selector instance.
      *
-     * @return \Symfony\Component\Translation\MessageSelector
+     * @return \Illuminate\Translation\MessageSelector
      */
     public function getSelector()
     {
