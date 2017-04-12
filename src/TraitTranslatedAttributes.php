@@ -2,7 +2,7 @@
 
 namespace brunojk\OriginRedisTranslator;
 
-class TraitTranslatedAttributes
+trait TraitTranslatedAttributes
 {
     protected $cached_translations = [];
 
