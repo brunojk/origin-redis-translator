@@ -219,7 +219,7 @@ class RedisTranslator extends NamespacedItemResolver implements TranslatorContra
     public function transChoice($id, $number, array $parameters = [], $domain = 'messages', $locale = null)
     {
         if(starts_with('validation', $id))
-            return $this->filetranslator->transChoice($id, $parameters, $locale);
+            return $this->filetranslator->transChoice($id, $number, $parameters, $locale);
 
         return $this->choice($id, $number, $parameters, !$domain || $domain == 'messages' ? 'default' : $domain, $locale);
     }

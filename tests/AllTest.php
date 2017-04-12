@@ -59,7 +59,7 @@ class AllTest extends TestAbstract
     }
 
     public function testChoice() {
-        $this->redis->set('app.en.default.hello_world', '{0} Hello World|[1,Inf] Hellos Worlds');
+        $this->redis->set('app.en.default.hello_world', '{0} Hello World|[1,5] Hellos Worlds');
 
         $this->assertEquals('Hello World', $this->transChoice('hello_world', 0));
         $this->assertEquals('Hellos Worlds', $this->transChoice('hello_world', 1));
